@@ -1,4 +1,4 @@
-require recipes-graphics/wayland/weston_7.0.0.bb
+require recipes-graphics/wayland/weston_8.0.0.bb
 
 SRC_URI_remove = "https://wayland.freedesktop.org/releases/${BPN}-${PV}.tar.xz"
 WESTON_SRC ?= "git://source.codeaurora.org/external/imx/weston-imx.git;protocol=https"
