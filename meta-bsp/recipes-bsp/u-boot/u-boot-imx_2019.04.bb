@@ -4,7 +4,7 @@
 DESCRIPTION = "i.MX U-Boot suppporting i.MX reference boards."
 require u-boot-common.inc
 require u-boot.inc
-inherit pythonnative
+inherit python3native
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
