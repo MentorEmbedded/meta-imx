@@ -1,4 +1,4 @@
-require recipes-support/opencv/opencv_4.1.0.bb
+require recipes-support/opencv/opencv_4.3.0.bb
 
 SRCREV_opencv = "c5bf3ec2e791e0817ab1d5880e78711b6fe08206"
 
