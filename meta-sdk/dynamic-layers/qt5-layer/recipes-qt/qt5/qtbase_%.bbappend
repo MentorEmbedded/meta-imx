@@ -20,8 +20,7 @@ SRC_URI_append_imxgpu = " \
 SRC_URI_append_imxgpu3d = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'x11', \
         '', \
-        'file://0015-Add-eglfs-to-IMX-GPU.patch \
-         file://0016-Configure-eglfs-with-egl-pkg-config.patch', d)} \
+        'file://0015-Add-eglfs-to-IMX-GPU.patch', d)} \
 "
 
 PACKAGECONFIG_GL_imxpxp   = "gles2"
