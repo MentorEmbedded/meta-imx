@@ -4,7 +4,7 @@
 
 DESCRIPTION = "Freescale VPU library"
 LICENSE = "Proprietary"
-LIC_FILES_CHKSUM = "file://COPYING;md5=6c12031a11b81db21cdfe0be88cac4b3" 
+LIC_FILES_CHKSUM = "file://COPYING;md5=6c12031a11b81db21cdfe0be88cac4b3"
 
 PROVIDES = "virtual/imxvpu"
 RPROVIDES_${PN} = "virtual/imxvpu"
@@ -26,6 +26,15 @@ do_compile() {
 
 do_install() {
     oe_runmake PLATFORM="${PLATFORM}" DEST_DIR="${D}" install
+    if [ "${libdir}" != "/usr/lib" ]; then
+        install -d "$(dirname "${D}${libdir}")"
+        mv "${D}/usr/lib" "${D}${libdir}"
+    fi
+    if [ "${includedir}" != "/usr/include" ]; then
+        install -d "$(dirname "${D}${includedir}")"
+        mv "${D}/usr/include" "${D}${includedir}"
+    fi
+    rmdir --ignore-fail-on-non-empty "${D}/usr"
 }
 
 # Compatible only for i.MX with Chips&Media VPU
